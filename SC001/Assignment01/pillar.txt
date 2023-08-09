@@ -1,0 +1,33 @@
+def main():
+    build()
+    move_4()
+    build()
+    move_4()
+    build()
+    move_4()
+    build()
+
+def move_4():
+    for i in range(4):
+        move()
+
+def build():
+    """
+    Pre-condition: Karel is at the bottom of the dom, facing east.
+    Post-condition:
+    """
+    turn_left()
+    if not on_beeper():
+        put_beeper()
+    while front_is_clear():
+        move()
+        while not on_beeper():
+            put_beeper()
+    turn_around()
+    while front_is_clear():
+        move()
+    turn_left()
+
+def turn_around():
+    turn_left()
+    turn_left()

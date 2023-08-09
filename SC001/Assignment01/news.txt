@@ -1,0 +1,40 @@
+def main():
+    pick()
+    drop()
+
+def pick():
+    """
+    Pre-condition: Karel is northwest corner, facing east
+    post-condition:karel is at the entrance, facing west
+    """
+    move()
+    move()
+    turn_right()
+    move()
+    turn_left()
+    move()
+    pick_beeper()
+    turn_around()
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+def turn_around():
+    turn_left()
+    turn_left()
+
+def drop():
+    """
+    Pre-condition:karel is at the entrance, facing west
+    Post-condition: Karel is northwest corner holding beeper, facing east
+    """
+    move()
+    turn_right()
+    move()
+    turn_left()
+    move()
+    move()
+    turn_around()
+    put_beeper()
